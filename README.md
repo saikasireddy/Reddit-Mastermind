@@ -386,8 +386,7 @@ MIT License - See LICENSE file for details
 - **Groq** for fast LLM inference
 - **Supabase** for database infrastructure
 - **Next.js** for full-stack framework
-- **Anthropic** for Claude Code assistance
 
 ---
 
-**Built with 🤖 by [Your Name] for [Hackathon Name]**
+
