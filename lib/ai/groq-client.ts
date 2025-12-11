@@ -1,8 +1,24 @@
 import Groq from "groq-sdk";
 
-// Initialize Groq client with retry logic
-export const groq = new Groq({
-  apiKey: process.env.GROQ_API_KEY,
+// Safe initialization - won't fail during build if env var missing
+let groqInstance: Groq | null = null;
+
+function getGroqClient(): Groq {
+  if (!groqInstance) {
+    groqInstance = new Groq({
+      apiKey: process.env.GROQ_API_KEY || "placeholder-for-build",
+    });
+  }
+  return groqInstance;
+}
+
+// Export getter function instead of instance to defer initialization
+export const groq = new Proxy({} as Groq, {
+  get: (target, prop) => {
+    const client = getGroqClient();
+    const value = (client as any)[prop];
+    return typeof value === 'function' ? value.bind(client) : value;
+  }
 });
 
 // Helper: Retry wrapper for LLM calls
