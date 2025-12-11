@@ -1,0 +1,44 @@
+{
+  "name": "reddit-mastermind",
+  "version": "1.0.0",
+  "description": "AI-powered narrative engine for automated Reddit marketing campaigns",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "test": "node scripts/test-constraints.js"
+  },
+  "keywords": [
+    "reddit",
+    "marketing",
+    "automation",
+    "ai",
+    "content-generation",
+    "narrative-engine",
+    "groq",
+    "llama"
+  ],
+  "author": "Reddit Mastermind Team",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/reddit-mastermind.git"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.87.1",
+    "@types/node": "^25.0.0",
+    "@types/react": "^19.2.7",
+    "groq-sdk": "^0.37.0",
+    "next": "^16.0.8",
+    "react": "^19.2.1",
+    "react-dom": "^19.2.1",
+    "typescript": "^5.9.3",
+    "xlsx": "^0.18.5"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.22",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^3.4.1"
+  }
+}
